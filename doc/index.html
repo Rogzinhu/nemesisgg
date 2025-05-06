@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>NêmesisGG</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .logo {
+      font-size: 4em;
+      animation: fadeIn 2s ease-in;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background: white;
+      color: black;
+      border: none;
+      cursor: pointer;
+      display: none;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">NÊMESISGG</div>
+  <button class="btn" onclick="location.href='nemesisgg/historia.html'">Conheça a História</button>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.btn').style.display = 'block';
+    }, 5000);
+  </script>
+</body>
+</html>
