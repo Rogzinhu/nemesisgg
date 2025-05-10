@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nemesis - A Queda da Humanidade</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+        .cinzel {
+            font-family: 'Cinzel', serif;
+        }
+        .crystal {
+            animation: pulse 4s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { filter: drop-shadow(0 0 5px rgba(128, 0, 128, 0.5)); }
+            100% { filter: drop-shadow(0 0 20px rgba(128, 0, 128, 0.8)); }
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .delayed-fade {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 2s;
+        }
+        .bg-nemesis {
+            background: linear-gradient(to bottom, #0a0a0a, #1a0a20);
+        }
+        .creator-card {
+            transition: all 0.3s ease;
+        }
+        .creator-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px -5px rgba(128, 0, 128, 0.4);
+        }
+        .faction-arquivistas {
+            border-color: #4338ca;
+            background: linear-gradient(to bottom right, #1e1b4b, #111827);
+        }
+        .faction-eterios {
+            border-color: #7e22ce;
+            background: linear-gradient(to bottom right, #3b0764, #111827);
+        }
+        .faction-ferronatos {
+            border-color: #b45309;
+            background: linear-gradient(to bottom right, #78350f, #111827);
+        }
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background: linear-gradient(to right, rgba(128, 0, 128, 0.7), rgba(128, 0, 128, 0.3));
+            border-color: #a855f7;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-black bg-opacity-80 backdrop-blur-sm z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold cinzel text-purple-300">NEMESIS</a>
+            <div class="flex space-x-6">
+                <a href="#home" class="hover:text-purple-300 transition-colors">Início</a>
+                <a href="#historia" class="hover:text-purple-300 transition-colors">História</a>
+                <a href="#criadores" class="hover:text-purple-300 transition-colors">Criadores</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen bg-nemesis flex flex-col items-center justify-center pt-16 relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <svg class="w-full h-full opacity-20" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="url(#stars)"></path>
+                <defs>
+                    <pattern id="stars" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                        <circle cx="10" cy="10" r="0.5" fill="#fff"></circle>
+                        <circle cx="30" cy="15" r="0.3" fill="#fff"></circle>
+                        <circle cx="50" cy="30" r="0.4" fill="#fff"></circle>
+                        <circle cx="70" cy="25" r="0.2" fill="#fff"></circle>
+                        <circle cx="90" cy="10" r="0.3" fill="#fff"></circle>
+                        <circle cx="20" cy="40" r="0.2" fill="#fff"></circle>
+                        <circle cx="40" cy="50" r="0.3" fill="#fff"></circle>
+                        <circle cx="60" cy="60" r="0.4" fill="#fff"></circle>
+                        <circle cx="80" cy="70" r="0.2" fill="#fff"></circle>
+                        <circle cx="15" cy="80" r="0.3" fill="#fff"></circle>
+                        <circle cx="35" cy="90" r="0.2" fill="#fff"></circle>
+                        <circle cx="55" cy="85" r="0.3" fill="#fff"></circle>
+                        <circle cx="75" cy="95" r="0.2" fill="#fff"></circle>
+                        <circle cx="95" cy="90" r="0.4" fill="#fff"></circle>
+                    </pattern>
+                </defs>
+            </svg>
+        </div>
+        
+        <div class="container mx-auto px-4 z-10 text-center">
+            <!-- Logo -->
+            <div class="fade-in mb-16">
+                <svg class="w-64 h-64 mx-auto crystal" viewBox="0 0 200 200">
+                    <polygon points="100,10 40,50 40,150 100,190 160,150 160,50" fill="none" stroke="purple" stroke-width="2"></polygon>
+                    <polygon points="100,20 50,55 50,145 100,180 150,145 150,55" fill="none" stroke="#9333ea" stroke-width="1.5"></polygon>
+                    <polygon points="100,30 60,60 60,140 100,170 140,140 140,60" fill="none" stroke="#a855f7" stroke-width="1"></polygon>
+                    <text x="100" y="105" text-anchor="middle" fill="#d8b4fe" font-family="Cinzel" font-size="24" font-weight="bold">NEMESIS</text>
+                </svg>
+            </div>
+            
+            <!-- Call to action -->
+            <div class="delayed-fade">
+                <h2 class="text-3xl md:text-4xl cinzel font-bold mb-6 text-purple-200">A Queda da Humanidade</h2>
+                <a href="#historia" class="inline-block bg-gradient-to-r from-purple-900 to-purple-700 text-white font-bold py-3 px-8 rounded-lg hover:from-purple-800 hover:to-purple-600 transition-all duration-300 shadow-lg shadow-purple-900/30">
+                    Conheça a História
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#0f0f0f" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,208C672,213,768,203,864,181.3C960,160,1056,128,1152,117.3C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Historia Section -->
+    <section id="historia" class="min-h-screen bg-gradient-to-b from-gray-900 to-black py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl cinzel font-bold mb-16 text-center text-purple-200">A História</h2>
+            
+            <div class="max-w-4xl mx-auto bg-black bg-opacity-60 p-8 rounded-lg border border-purple-900 shadow-xl shadow-purple-900/20">
+                <div class="flex justify-center mb-8">
+                    <svg class="w-24 h-24" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" fill="black" />
+                        <circle cx="50" cy="50" r="38" fill="none" stroke="purple" stroke-width="1" />
+                        <circle cx="50" cy="50" r="35" fill="none" stroke="#9333ea" stroke-width="0.5" />
+                    </svg>
+                </div>
+                
+                <h3 class="text-2xl cinzel font-bold mb-6 text-purple-200 text-center">🌑 NÊMESIS – A Queda da Humanidade</h3>
+                
+                <div class="space-y-4 text-lg leading-relaxed">
+                    <p>Um cristal negro caiu do céu, calando o mundo e revelando o pior da alma humana. Ele não criou o mal — só acendeu o que já existia.</p>
+                    
+                    <p>Alguns o adoraram. Outros quiseram usá-lo. Todos foram corrompidos.</p>
+                    
+                    <p>Assim começou a Grande Ruptura: Não era por religião ou poder. Era ego puro. O mundo se partiu em guerras, monstros surgiram de experimentos, mortos voltaram sem alma... Cidades sumiram. A história virou poeira.</p>
+                    
+                    <p>Agora só restam sobreviventes vivendo entre ruínas, florestas mutantes e relíquias esquecidas. O mundo ainda sussurra. Fragmentos do cristal estão despertando.</p>
+                    
+                    <p class="text-xl font-semibold text-purple-200 mt-8">E a pergunta é:<br>
+                    Você vai reconstruir o que sobrou...<br>
+                    Ou acabar com tudo de vez?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Criadores Section -->
+    <section id="criadores" class="min-h-screen bg-gradient-to-b from-black to-gray-900 py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl cinzel font-bold mb-8 text-center text-purple-200">Criadores</h2>
+            
+            <!-- Faction Tabs -->
+            <div class="flex flex-wrap justify-center mb-12 gap-2">
+                <button class="tab-button active px-6 py-3 rounded-lg border border-purple-800 text-purple-200 font-semibold" data-faction="all">
+                    Todos
+                </button>
+                <button class="tab-button px-6 py-3 rounded-lg border border-indigo-800 text-indigo-200 font-semibold" data-faction="arquivistas">
+                    Arquivistas
+                </button>
+                <button class="tab-button px-6 py-3 rounded-lg border border-purple-800 text-purple-200 font-semibold" data-faction="eterios">
+                    Éterios
+                </button>
+                <button class="tab-button px-6 py-3 rounded-lg border border-amber-800 text-amber-200 font-semibold" data-faction="ferronatos">
+                    Ferronatos
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- ARQUIVISTAS -->
+                <!-- Rogzinhu -->
+                <div class="creator-card faction-arquivistas rounded-xl overflow-hidden border-2 shadow-lg" data-faction="arquivistas">
+                    <div class="p-6">
+                        <div class="w-24 h-24 mx-auto bg-indigo-900 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-4xl">📚</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Rogzinhu</h3>
+                        <p class="text-indigo-300 text-center mb-2">Arquivistas</p>
+                        <p class="text-gray-400 text-center italic mb-4">"Conhecimento é poder!"</p>
+                        <div class="flex justify-center">
+                            <a href="https://twitch.tv/rogzinhu" target="_blank" class="bg-indigo-700 hover:bg-indigo-600 text-white px-6 py-2 rounded-lg transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+                                Twitch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Yummaah -->
+                <div class="creator-card faction-arquivistas rounded-xl overflow-hidden border-2 shadow-lg" data-faction="arquivistas">
+                    <div class="p-6">
+                        <div class="w-24 h-24 mx-auto bg-indigo-900 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-4xl">📚</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Yummaah</h3>
+                        <p class="text-indigo-300 text-center mb-2">Arquivistas</p>
+                        <div class="flex justify-center">
+                            <a href="https://www.twitch.tv/yummaah" target="_blank" class="bg-indigo-700 hover:bg-indigo-600 text-white px-6 py-2 rounded-lg transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+                                Twitch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- June -->
+                <div class="creator-card faction-arquivistas rounded-xl overflow-hidden border-2 shadow-lg" data-faction="arquivistas">
+                    <div class="p-6">
+                        <div class="w-24 h-24 mx-auto bg-indigo-900 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-4xl">📚</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">June</h3>
+                        <p class="text-indigo-300 text-center mb-2">Arquivistas</p>
+                        <div class="flex justify-center">
+                            <a href="https://www.twitch.tv/mazz_ju" target="_blank" class="bg-indigo-700 hover:bg-indigo-600 text-white px-6 py-2 rounded-lg transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+                                Twitch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- twinmilk -->
+                <div class="creator-card faction-arquivistas rounded-xl overflow-hidden border-2 shadow-lg" data-faction="arquivistas">
+                    <div class="p-6">
+                        <div class="w-24 h-24 mx-auto bg-indigo-900 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-4xl">📚</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">twinmilk</h3>
+                        <p class="text-indigo-300 text-center mb-2">Arquivistas</p>
+                        <p class="text-gray-400 text-center italic mb-4">"testar e experimentar é a chave pra tudo"</p>
+                        <div class="flex justify-center">
+                            <a href="https://www.twitch.tv/twinmilk" target="_blank" class="bg-indigo-700 hover:bg-indigo-600 text-white px-6 py-2 rounded-lg transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+                                Twitch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nolado -->
+                <div class="creator-card faction-arquivistas rounded-xl overflow-hidden border-2 shadow-lg" data-faction="arquivistas">
+                    <div class="p-6">
+                        <div class="w-24 h-24 mx-auto bg-indigo-900 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-4xl">📚</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Nolado</h3>
+                        <p class="text-indigo-300 text-center mb-2">Arquivistas</p>
+                        <p class="text-gray-400 text-center italic mb-4">"O herói destrói quem ama para salvar o mundo, e o vilão destrói o mundo para salvar quem ama."</p>
+                        <div class="flex justify-center">
+                            <a href="https://www.twitch.tv/noladovtuber" target="_blank" class="bg-indigo-700 hover:bg-indigo-600 text-white px-6 py-2 rounded-lg transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+                                Twitch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Daisuki -->
+                <div class="creator-card faction-arquivistas rounded-xl overflow-hidden border-2 shadow-lg" data-faction="arquivistas">
+                    <div class="p-6">
+                        <div class="w-24 h-24 mx-auto bg-indigo-900 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-4xl">📚</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Daisuki</h3>
+                        <p class="text-indigo-300 text-center mb-2">Arquivistas</p>
+                        <p class="text-gray-400 text-center italic mb-4">"Não chama atenção, mas quando se nota, é impossível esquecer"</p>
+                        <div class="flex justify-center">
+                            <a href="https://www.twitch.tv/loneryll" target="_blank" class="bg-indigo-700 hover:bg-indigo-600 text-white px-6 py-2 rounded-lg transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+                                Twitch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FINIX -->
+                <div class="creator-card faction-arquivistas rounded-xl overflow-hidden border-2 shadow-lg" data-faction="arquivistas">
+                    <div class="p-6">
+                        <div class="w-24 h-24 mx-auto bg-indigo-900 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-4xl">📚</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">FINIX</h3>
+                        <p class="text-indigo-300 text-center mb-2">Arquivistas</p>
+                        <p class="text-gray-400 text-center italic mb-4">"Quem é forte sempre morre só"</p>
+                        <div class="flex justify-center">
+                            <a href="https://www.twitch.tv/finixzera" target="_blank" class="bg-indigo-700 hover:bg-indigo-600 text-white px-6 py-2 rounded-lg transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+                                Twitch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lizard Astral -->
+                <div class="creator-card faction-arquivistas rounded-xl overflow-hidden border-2 shadow-lg" data-faction="arquivistas">
+                    <div class="p-6">
+                        <div class="w-24 h-24 mx-auto bg-indigo-900 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-4xl">📚</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Lizard Astral</h3>
+                        <p class="text-indigo-300 text-center mb-2">Arquivistas</p>
+                        <p class="text-gray-400 text-center italic mb-4">"Evoluir é tudo."</p>
+                        <div class="flex justify-center">
+                            <a href="https://www.twitch.tv/lizard_astral" target="_blank" class="bg-indigo-700 hover:bg-indigo-600 text-white px-6 py-2 rounded-lg transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+                                Twitch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ÉTERIOS -->
+                <!-- LordeNero -->
+                <div class="creator-card faction-eterios rounded-xl overflow-hidden border-2 shadow-lg" data-faction="eterios">
+                    <div class="p-6">
+                        <div class="w-24 h-24 mx-auto bg-purple-900 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-4xl">✨</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">LordeNero</h3>
+                        <p class="text-purple-300 text-center mb-2">Éterios</p>
+                        <p class="text-gray-400 text-center italic mb-4">"tudo demais é faz mal"</p>
+                        <div class="flex justify-center">
+                            <a href="https://twitch.tv/lordeneroz" target="_blank" class="bg-purple-700 hover:bg-purple-600 text-white px-6 py-2 rounded-lg transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+                                Twitch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- YasBruxa -->
+                <div class="creator-card faction-eterios rounded-xl overflow-hidden border-2 shadow-lg" data-faction="eterios">
+                    <div class="p-6">
+                        <div class="w-24 h-24 mx-auto bg-purple-900 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-4xl">✨</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">YasBruxa</h3>
+                        <p class="text-purple-300 text-center mb-2">Éterios</p>
+                        <p class="text-gray-400 text-center italic mb-4">"A história de todo homem termina em morte, mas não somos homens e não morreremos hoje."</p>
+                        <div class="flex justify-center">
+                            <a href="https://twitch.tv/yasbruxagh" target="_blank" class="bg-purple-700 hover:bg-purple-600 text-white px-6 py-2 rounded-lg transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+                                Twitch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ElmaShops -->
+                <div class="creator-card faction-eterios rounded-xl overflow-hidden border-2 shadow-lg" data-faction="eterios">
+                    <div class="p-6">
+                        <div class="w-24 h-24 mx-auto bg-purple-900 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-4xl">✨</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">ElmaShops</h3>
+                        <p class="text-purple-300 text-center mb-2">Éterios</p>
+                        <p class="text-gray-400 text-center italic mb-4">"Sempre bom um sorvetinho pra relaxar"</p>
+                        <div class="flex justify-center">
+                            <a href="https://www.twitch.tv/elmashops" target="_blank" class="bg-purple-700 hover:bg-purple-600 text-white px-6 py-2 rounded-lg transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+                                Twitch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- mimduim -->
+                <div class="creator-card faction-eterios rounded-xl overflow-hidden border-2 shadow-lg" data-faction="eterios">
+                    <div class="p-6">
+                        <div class="w-24 h-24 mx-auto bg-purple-900 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-4xl">✨</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">mimduim</h3>
+                        <p class="text-purple-300 text-center mb-2">Éterios</p>
+                        <div class="flex justify-center">
+                            <a href="https://www.twitch.tv/mimduim0707" target="_blank" class="bg-purple-700 hover:bg-purple-600 text-white px-6 py-2 rounded-lg transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+                                Twitch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FERRONATOS -->
+                <!-- Virgula -->
+                <div class="creator-card faction-ferronatos rounded-xl overflow-hidden border-2 shadow-lg" data-faction="ferronatos">
+                    <div class="p-6">
+                        <div class="w-24 h-24 mx-auto bg-amber-900 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-4xl">⚙️</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Virgula</h3>
+                        <p class="text-amber-300 text-center mb-2">Ferronatos</p>
+                        <p class="text-gray-400 text-center italic mb-4">"Tudo Vibra Tudo Sente"</p>
+                        <div class="flex justify-center">
+                            <a href="https://www.twitch.tv/virgula_imdd" target="_blank" class="bg-amber-700 hover:bg-amber-600 text-white px-6 py-2 rounded-lg transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+                                Twitch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Flitz -->
+                <div class="creator-card faction-ferronatos rounded-xl overflow-hidden border-2 shadow-lg" data-faction="ferronatos">
+                    <div class="p-6">
+                        <div class="w-24 h-24 mx-auto bg-amber-900 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-4xl">⚙️</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Flitz</h3>
+                        <p class="text-amber-300 text-center mb-2">Ferronatos</p>
+                        <p class="text-gray-400 text-center italic mb-4">"Guardião lendário"</p>
+                        <div class="flex justify-center">
+                            <a href="https://www.twitch.tv/zflitz77" target="_blank" class="bg-amber-700 hover:bg-amber-600 text-white px-6 py-2 rounded-lg transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+                                Twitch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-500">© 2023 Nemesis - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Faction filtering
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const creatorCards = document.querySelectorAll('.creator-card');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const faction = button.getAttribute('data-faction');
+                
+                // Show/hide cards based on faction
+                creatorCards.forEach(card => {
+                    if (faction === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        if (card.getAttribute('data-faction') === faction) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93da41591454196f',t:'MTc0Njg4ODY5Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
